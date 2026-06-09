@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Giới thiệu 3CE</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+<div class="container">
+<a class="navbar-brand" href="../index.html"><img src="../assets/logo.jpg" alt="3CE" style="height:48px;"> <span class="fw-bold">3CE</span></a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item"><a class="nav-link" href="../index.html">Trang Chủ</a></li>
+<li class="nav-item"><a class="nav-link" href="san-pham.html">Sản Phẩm</a></li>
+<li class="nav-item"><a class="nav-link active" href="gioi-thieu.html">Giới Thiệu</a></li>
+<li class="nav-item"><a class="nav-link" href="lien-he.html">Liên Hệ</a></li>
+</ul>
+<a href="#" class="btn btn-outline-dark" onclick="openCart();return false;">
+<i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng
+<span class="badge bg-danger" id="cartCount">0</span>
+</a>
+</div>
+</div>
+</nav>
+
+<div class="container py-5">
+
+    <!-- Tiêu đề -->
+    <div class="banner mb-5">
+        <div class="row align-items-center">
+
+            <div class="col-md-6">
+                <h1 class="display-4 fw-bold text-danger">
+                    3CE
+                </h1>
+
+                <h3>3 Concept Eyes</h3>
+
+                <p class="mt-3">
+                    3CE là thương hiệu mỹ phẩm nổi tiếng đến từ Hàn Quốc,
+                    được thành lập bởi Stylenanda vào năm 2009.
+                    Với phong cách trẻ trung, hiện đại và dẫn đầu xu hướng,
+                    3CE được yêu thích trên toàn thế giới.
+                </p>
+            </div>
+
+            <div class="col-md-6 text-center">
+                <img src="../assets/3cebanner.jpg"
+                     class="img-fluid rounded"
+                     alt="3CE">
+            </div>
+
+        </div>
+    </div>
+
+<div class="card border-0 shadow-sm mb-5">
+    <div class="card-body">
+
+    <div class="row align-items-center">
+
+        <!-- Sứ mệnh -->
+        <div class="col-md-4 border-end">
+
+            <h3 class="section-title">
+                Sứ mệnh
+            </h3>
+
+            <p>
+                3CE hướng đến việc giúp mọi người thể hiện
+                cá tính riêng thông qua trang điểm.
+            </p>
+
+            <p>
+                Không ngừng nghiên cứu và phát triển các
+                sản phẩm chất lượng cao, màu sắc thời thượng
+                và thiết kế tinh tế.
+            </p>
+
+        </div>
+
+        <!-- Giá trị thương hiệu -->
+        <div class="col-md-8">
+
+            <div class="row text-center">
+
+                <div class="col">
+                    <h5>💎</h5>
+                    <h6>Chất lượng ổn định</h6>
+                    <small>Sản phẩm an toàn và dịu nhẹ cho làn da.</small>
+                </div>
+
+                <div class="col">
+                    <h5>🎨</h5>
+                    <h6>Màu sắc thời thượng</h6>
+                    <small>Cập nhật xu hướng makeup mới nhất.</small>
+                </div>
+
+                <div class="col">
+                    <h5>✨</h5>
+                    <h6>Thiết kế tinh tế</h6>
+                    <small>Sang trọng, hiện đại và tối giản.</small>
+                </div>
+
+                <div class="col">
+                    <h5>❤</h5>
+                    <h6>Truyền cảm hứng</h6>
+                    <small>Tôn vinh vẻ đẹp riêng của mỗi người.</small>
+                </div>
+
+                <div class="col">
+                    <h5>🌿</h5>
+                    <h6>Giá hợp lý</h6>
+                    <small>Dễ tiếp cận với nhiều đối tượng.</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+    <!-- Danh mục hàng -->
+    <h2 class="text-center section-title mb-4">
+        Các Danh Mục Hàng
+    </h2>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card category-card h-100">
+                <img src="../assets/son.jpg"
+                     class="card-img-top"
+                     alt="Son môi">
+
+                <div class="card-body">
+                    <h4>Môi</h4>
+                    <p>
+                        Son lì, son tint, son dưỡng
+                        với nhiều màu sắc thời thượng.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card category-card h-100">
+                <img src="../assets/mat.jpg"
+                     class="card-img-top"
+                     alt="Trang điểm mặt">
+
+                <div class="card-body">
+                    <h4>Mặt</h4>
+                    <p>
+                        Cushion, kem nền, phấn phủ,
+                        má hồng và highlight.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card category-card h-100">
+                <img src="../assets/eye.jpg"
+                     class="card-img-top"
+                     alt="Trang điểm mắt">
+
+                <div class="card-body">
+                    <h4>Mắt</h4>
+                    <p>
+                        Bảng phấn mắt, mascara,
+                        eyeliner và chì kẻ mày.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card category-card h-100">
+                <img src="../assets/nail.jpg"
+                     class="card-img-top"
+                     alt="Nail">
+
+                <div class="card-body">
+                    <h4>Nail</h4>
+                    <p>
+                        Sơn móng với nhiều màu sắc
+                        hiện đại và thời trang.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card category-card h-100">
+                <img src="../assets/tools.jpg"
+                     class="card-img-top"
+                     alt="Dụng cụ">
+
+                <div class="card-body">
+                    <h4>Dụng Cụ</h4>
+                    <p>
+                        Cọ trang điểm, bông mút và
+                        phụ kiện hỗ trợ makeup.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card category-card h-100">
+                <img src="../assets/set.jpg"
+                     class="card-img-top"
+                     alt="Set">
+
+                <div class="card-body">
+                    <h4>Set & Kits</h4>
+                    <p>
+                        Bộ sản phẩm được phối sẵn
+                        dành cho người mới bắt đầu.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần dưới -->
+
+<div class="row mt-5 g-4">
+
+    <!-- Tầm ảnh hưởng -->
+    <div class="col-md-4">
+
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+
+                <h3 class="section-title">
+                    Tầm ảnh hưởng
+                </h3>
+
+                <p>
+                    3CE đã có mặt tại nhiều quốc gia trên thế giới
+                    và trở thành biểu tượng của phong cách trang điểm
+                    Hàn Quốc hiện đại.
+                </p>
+
+                <p>
+                    Thương hiệu luôn cập nhật xu hướng mới nhằm
+                    đáp ứng nhu cầu làm đẹp ngày càng đa dạng.
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Hình showroom -->
+
+    <div class="col-md-4">
+
+        <div class="card h-100 border-0 shadow-sm">
+
+            <img src="../assets/store.jpg"
+                 class="card-img-top"
+                 alt="3CE Store">
+
+            <div class="card-body text-center">
+
+                <h3 class="fw-bold">
+                    3CE
+                </h3>
+
+                <p>
+                    Không gian mua sắm hiện đại và trẻ trung.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Thông điệp -->
+
+    <div class="col-md-4">
+
+        <div class="card h-100 border-0 shadow-sm">
+
+            <div class="card-body">
+
+                <h3 class="section-title">
+                    Thông điệp thương hiệu
+                </h3>
+
+                <blockquote class="blockquote text-center mt-4">
+
+                    <p class="fs-4 text-danger">
+                        "Khơi nguồn cảm hứng làm đẹp,
+                        tôn vinh vẻ đẹp riêng của mỗi người."
+                    </p>
+
+                </blockquote>
+
+                <p class="mt-3">
+                    3CE không chỉ là mỹ phẩm mà còn là công cụ
+                    giúp bạn tự tin thể hiện phong cách và cá tính.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+ <!-- Footer -->
+
+<div class="mt-5 p-4 rounded-4 text-white text-center"
+     style="background:#cf7f85;">
+
+    <div class="row">
+
+        <div class="col-md-2">
+            <strong>Thương hiệu Hàn Quốc</strong>
+        </div>
+
+        <div class="col-md-2">
+            <strong>Không thử nghiệm động vật</strong>
+        </div>
+
+        <div class="col-md-2">
+            <strong>Kiểm định chất lượng</strong>
+        </div>
+
+        <div class="col-md-2">
+            <strong>Thiết kế thời thượng</strong>
+        </div>
+
+        <div class="col-md-2">
+            <strong>Phù hợp nhiều phong cách</strong>
+        </div>
+
+        <div class="col-md-2">
+            <strong>Được yêu thích toàn cầu</strong>
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
+<div id="cartPanel">
+  <h5>🛒 Giỏ hàng</h5>
+  <ul id="cartList"></ul>
+  <div class="cart-panel-btns">
+    <button class="btn btn-danger btn-sm flex-fill" onclick="buyNow()">Mua ngay</button>
+    <button class="btn btn-outline-secondary btn-sm" onclick="closeCart()">Đóng</button>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+document.getElementById("cartCount").innerText = cart.length;
+function renderCart() {
+  let list = document.getElementById("cartList");
+  if (!cart.length) { list.innerHTML = "<li style=\"color:#999\">Giỏ hàng trống</li>"; return; }
+  list.innerHTML = cart.map((it, idx) =>
+    `<li>${it.name} - <b>${it.price}</b><button class="del-btn" onclick="removeCart(${idx})">✕</button></li>`
+  ).join("");
+}
+function removeCart(idx) {
+  cart.splice(idx, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  document.getElementById("cartCount").innerText = cart.length;
+  renderCart();
+}
+function buyNow() {
+  if (!cart.length) { alert("Giỏ hàng trống!"); return; }
+  alert("Cảm ơn bạn đã mua hàng!\n" + cart.map(i => i.name + " - " + i.price).join("\n"));
+  cart = [];
+  localStorage.removeItem("cart");
+  document.getElementById("cartCount").innerText = 0;
+  renderCart();
+}
+</script>
+</body>
+</html>

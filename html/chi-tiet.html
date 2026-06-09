@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Chi tiết sản phẩm</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+<div class="container">
+<a class="navbar-brand" href="../index.html"><img src="../assets/logo.jpg" alt="3CE" style="height:48px;"> <span class="fw-bold">3CE</span></a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item"><a class="nav-link" href="../index.html">Trang Chủ</a></li>
+<li class="nav-item"><a class="nav-link active" href="san-pham.html">Sản Phẩm</a></li>
+<li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới Thiệu</a></li>
+<li class="nav-item"><a class="nav-link" href="lien-he.html">Liên Hệ</a></li>
+</ul>
+<a href="#" class="btn btn-outline-dark" onclick="openCart();return false;">
+<i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng
+<span id="cartCount" class="badge bg-danger">0</span>
+</a>
+</div>
+</div>
+</nav>
+
+<div class="container py-5">
+  <div id="productDetail"></div>
+  <div id="notFound" class="text-center py-5" style="display:none">
+    <h3>Không tìm thấy sản phẩm.</h3>
+    <a href="san-pham.html" class="btn btn-danger mt-3">Quay lại</a>
+  </div>
+</div>
+
+<button id="cartBtn" class="cart-float" style="display:none">
+  🛒 Giỏ hàng (<span>0</span>)
+</button>
+<div id="cartPanel">
+  <h5>🛒 Giỏ hàng</h5>
+  <ul id="cartList"></ul>
+  <div class="cart-panel-btns">
+    <button class="btn btn-danger btn-sm flex-fill" onclick="buyNow()">Mua ngay</button>
+    <button class="btn btn-outline-secondary btn-sm" onclick="closeCart()">Đóng</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const products = {
+  cashmere: {
+    name: "Cashmere Hug",
+    type: "Son thỏi",
+    price: "371.000đ",
+    img: "../assets/cashmere.jpg",
+    desc: "Son thỏi Cashmere Hug với chất son mềm mịn, độ bám màu cao, giúp đôi môi lên màu tự nhiên và căng mượt suốt nhiều giờ.",
+    colors: [
+      { name: "Oat - Be yến mạch", img: "../assets/oat.jpg" },
+      { name: "Pure Blend - Hồng da", img: "../assets/pureblend.jpg" },
+      { name: "Your Side - Hồng đất", img: "../assets/yourside.jpg" },
+      { name: "Text Me - Hồng mận", img: "../assets/textme.jpg" },
+      { name: "Cozy Whisper - Hồng hạ", img: "../assets/cozywhisper.jpg" },
+      { name: "Buddy - Hồng cá hồi", img: "../assets/buddy.jpg" },
+      { name: "Knit - Hồng khô", img: "../assets/knit.jpg" },
+      { name: "Hush Red - Đỏ mâm xôi", img: "../assets/hushred.jpg" },
+      { name: "Taupe Beige - Nâu đất", img: "../assets/taupebeige.jpg" },
+      { name: "Dreamy - Hồng mơ", img: "../assets/dreamy.jpg" }
+    ]
+  },
+  glazy: {
+    name: "Glazy Lip Glow",
+    type: "Son bóng",
+    price: "398.000đ",
+    img: "../assets/glazy.jpg",
+    desc: "Glazy Lip Glow là dòng son bóng dưỡng môi của 3CE với hiệu ứng căng mọng tự nhiên, giúp đôi môi luôn mềm mượt và tràn đầy sức sống.",
+    colors: [
+      { name: "#30 Melting Smore", img: "../assets/meltingsmore.jpg" },
+      { name: "#31 Lavender Cre", img: "../assets/lavendercre.jpg" },
+      { name: "#32 Peachy Filli", img: "../assets/peachyfilli.jpg" },
+      { name: "#33 Cool Sweetie", img: "../assets/coolsweetie.jpg" },
+      { name: "#34 Rose Glaze", img: "../assets/roseglaze.jpg" },
+      { name: "#35 Pink Tube", img: "../assets/pinktube.jpg" },
+      { name: "#36 Double Grape", img: "../assets/doublegrape.jpg" },
+      { name: "#37 Raspberry Co", img: "../assets/raspberryco.jpg" },
+      { name: "#38 Salty Sweet", img: "../assets/saltysweet.jpg" },
+      { name: "#39 Bouncy Cherr", img: "../assets/bouncycherr.jpg" },
+      { name: "#40 Baked Peach", img: "../assets/bakedpeach.jpg" }
+    ]
+  },
+  sketch: {
+    name: "Son sáp Sketch Stick",
+    type: "Son sáp",
+    price: "358.000đ",
+    img: "../assets/sketch.jpg",
+    desc: "Sketch Stick là dòng son sáp của 3CE với thiết kế dạng bút tiện lợi, chất son mềm mịn, lên màu chuẩn, bám môi tốt và tạo hiệu ứng lì tự nhiên.",
+    colors: [
+      { name: "02 - Unfolding Rose", img: "../assets/unfoldingrose.jpg" },
+      { name: "03 - Softly Spoken", img: "../assets/softlyspoken.jpg" },
+      { name: "05 - High Standard", img: "../assets/highstandard.jpg" },
+      { name: "06 - Always Enough", img: "../assets/alwaysenough.jpg" },
+      { name: "07 - Burnt Orange", img: "../assets/burntorange.jpg" },
+      { name: "10 - Already Booked", img: "../assets/alreadybooked.jpg" },
+      { name: "11 - Soft Clay", img: "../assets/softclay.jpg" },
+      { name: "13 - Silent Bloom", img: "../assets/silentbloom.jpg" }
+    ]
+  },
+  blurmatte: {
+    name: "Blur Matte Lipstick",
+    type: "Son lì",
+    price: "478.000đ",
+    img: "../assets/blurmatte.jpg",
+    desc: "Blur Matte Lipstick là dòng son lì cao cấp của 3CE với chất son mịn như nhung, giúp che phủ rãnh môi hiệu quả và tạo hiệu ứng môi mềm mại.",
+    colors: [
+      { name: "Newtro Wave - Đỏ lạnh", img: "../assets/newtrowave.jpg" },
+      { name: "Pure Layer - Hồng cam", img: "../assets/purelayer.jpg" },
+      { name: "Apricot Filter - Cam đào", img: "../assets/apricotfilter.jpg" },
+      { name: "Salty Cinnamon - Nude", img: "../assets/saltycinnamon.jpg" },
+      { name: "In The Fog - Hồng nude", img: "../assets/inthefog.jpg" },
+      { name: "Misty Day - Hồng tím", img: "../assets/mistyday.jpg" },
+      { name: "Mauve Drizzle - Đỏ nho", img: "../assets/mauvedrizzle.jpg" },
+      { name: "Rosiness - Hồng khô", img: "../assets/rosiness.jpg" }
+    ]
+  },
+  blurwater: {
+    name: "Blur Water Tint",
+    type: "Son kem tint",
+    price: "398.000đ",
+    img: "../assets/blurwater.jpg",
+    desc: "Blur Water Tint là dòng son kem tint của 3CE với kết cấu mỏng nhẹ, dễ tán và tạo hiệu ứng môi mờ tự nhiên.",
+    colors: [
+      { name: "Laydown - Hồng trầm", img: "../assets/laydown.jpg" },
+      { name: "Bake Beige - Nâu cam", img: "../assets/bakebeige.jpg" },
+      { name: "Casual Affair - Hồng", img: "../assets/casualaffair.jpg" },
+      { name: "Coral Moon - Cam gạch", img: "../assets/coralmoon.jpg" },
+      { name: "Pink Guava - Hồng đào", img: "../assets/pinkguava.jpg" },
+      { name: "Spot Player - Táo đỏ", img: "../assets/spotplayer.jpg" },
+      { name: "Play Off - Đỏ hồng", img: "../assets/playoff.jpg" },
+      { name: "Double Wind - Hồng khô", img: "../assets/doublewind.jpg" },
+      { name: "Breeze Way - Cam ngọt", img: "../assets/breezeway.jpg" },
+      { name: "Sepia - Đỏ táo trầm", img: "../assets/sepia.jpg" },
+      { name: "Early Hour - Hồng ngọt", img: "../assets/earlyhour.jpg" },
+      { name: "More Peach - Cam đào", img: "../assets/morepeach.jpg" },
+      { name: "First Letter - Hồng", img: "../assets/firstletter.jpg" },
+      { name: "Chasing Rose - Hồng", img: "../assets/chasingrose.jpg" },
+      { name: "Warmth - Cam sữa", img: "../assets/warmth.jpg" },
+      { name: "Night Talk - Hồng nude", img: "../assets/nighttalk.jpg" },
+      { name: "Dear March - Cam nude", img: "../assets/dearmarch.jpg" },
+      { name: "Soft Spoken", img: "../assets/softspoken.jpg" },
+      { name: "Midnight Call", img: "../assets/midnightcall.jpg" }
+    ]
+  },
+  velvetplush: {
+    name: "Velvet Plush",
+    type: "Son kem lì",
+    price: "448.000đ",
+    img: "../assets/velvetplush.jpg",
+    desc: "Velvet Plush là dòng son kem lì nổi bật của 3CE với chất son mềm mượt, tạo hiệu ứng môi căng đầy và mịn như nhung.",
+    colors: [
+      { name: "#01 Speak Up", img: "../assets/speakupplush.jpg" },
+      { name: "#02 Taupe", img: "../assets/taupeplush.jpg" },
+      { name: "#03 Daffodil", img: "../assets/daffodilplush.jpg" },
+      { name: "#07 Dusky Pink", img: "../assets/duskypink.jpg" },
+      { name: "#08 Figtachio", img: "../assets/figtachio.jpg" },
+      { name: "#09 Childlike", img: "../assets/childlikeplush.jpg" },
+      { name: "#10 Cashmere Nude", img: "../assets/cashmerenudeplush.jpg" },
+      { name: "#21 Heated", img: "../assets/heated.jpg" },
+      { name: "#22 Spiced Latte", img: "../assets/spicedlatte.jpg" },
+      { name: "#23 Darkest Hour", img: "../assets/darkesthour.jpg" },
+      { name: "#24 Molten Copper", img: "../assets/moltencopper.jpg" },
+      { name: "#25 Self Made", img: "../assets/selfmade.jpg" },
+      { name: "#26 Coffee Date", img: "../assets/coffeedate.jpg" },
+      { name: "#27 Plum Smoke", img: "../assets/plumsmoke.jpg" },
+      { name: "#28 Layover", img: "../assets/layover.jpg" },
+      { name: "#29 Apricot Crust", img: "../assets/apricotcrust.jpg" }
+    ]
+  },
+  velvetlip: {
+    name: "Velvet Lip Tint",
+    type: "Son tint lì",
+    price: "398.000đ",
+    img: "../assets/velvetlip.jpg",
+    desc: "Velvet Lip Tint là dòng son tint lì của 3CE với kết cấu mịn nhẹ, giúp đôi môi lên màu tự nhiên và mềm mại.",
+    colors: [
+      { name: "Childlike - Cam cháy", img: "../assets/childliketint.jpg" },
+      { name: "Pink Break - Cánh hồng", img: "../assets/pinkbreak.jpg" },
+      { name: "Daffodil - Đậu đỏ", img: "../assets/daffodiltint.jpg" },
+      { name: "Going Right - Cam đào", img: "../assets/goingright.jpg" },
+      { name: "Private - Đỏ lạnh", img: "../assets/private.jpg" },
+      { name: "New Nude - Mật ong", img: "../assets/newnude.jpg" },
+      { name: "Taupe - Gạch đỏ", img: "../assets/taupe.jpg" },
+      { name: "Best Ever - Đỏ hồng", img: "../assets/bestever.jpg" },
+      { name: "Speak Up - Lê đỏ ngâm", img: "../assets/speakuptint.jpg" },
+      { name: "Think Again - Mơ ngọt", img: "../assets/thinkagain.jpg" },
+      { name: "Cashmere Nude - Hồng", img: "../assets/cashmerenudetint.jpg" },
+      { name: "Definition - Đất nung", img: "../assets/definition.jpg" },
+      { name: "Walk N Talk - Cam sữa", img: "../assets/walkntalk.jpg" },
+      { name: "Bitter Hour - Đỏ đất", img: "../assets/bitterhour.jpg" }
+    ]
+  },
+  hazylip: {
+    name: "Hazy Lip Clay",
+    type: "Son kem lì",
+    price: "408.000đ",
+    img: "../assets/hazylip.jpg",
+    desc: "Hazy Lip Clay là dòng son kem lì của 3CE với chất son mềm mịn như đất sét, tạo hiệu ứng môi mờ thời thượng.",
+    colors: [
+      { name: "Mauvrown - Nâu đỏ đất", img: "../assets/mauvrown.jpg" },
+      { name: "Cherry Fluff - Hồng", img: "../assets/cherryfluff.jpg" },
+      { name: "Warm Brownie - Cam nâu", img: "../assets/warmbrownie.jpg" },
+      { name: "Common Stranger - Cam", img: "../assets/commonstranger.jpg" },
+      { name: "Plum Pudding - Đỏ mận", img: "../assets/plumpudding.jpg" },
+      { name: "Butter Beige - Cam đào", img: "../assets/butterbeige.jpg" },
+      { name: "Paintingcot - Đào đỏ", img: "../assets/paintingcot.jpg" },
+      { name: "Typegirl - Hồng lựu", img: "../assets/typegirl.jpg" },
+      { name: "Whip Red - Đỏ mận", img: "../assets/whipred.jpg" },
+      { name: "Hipamine - Nâu đỏ", img: "../assets/hipamine.jpg" }
+    ]
+  },
+  gummyoil: {
+    name: "Gummy Oil Tint",
+    type: "Son tint bóng",
+    price: "358.000đ",
+    img: "../assets/gummyoil.jpg",
+    desc: "Gummy Oil Tint là dòng son tint bóng kết hợp dưỡng môi của 3CE, mang đến đôi môi căng mọng và tràn đầy sức sống.",
+    colors: [
+      { name: "01 - Bagel Peach", img: "../assets/bagelpeach.jpg" },
+      { name: "02 - Melting Gummy", img: "../assets/meltinggummy.jpg" },
+      { name: "03 - Glowy", img: "../assets/glowy.jpg" },
+      { name: "04 - Rose Gummy", img: "../assets/rosegummy.jpg" },
+      { name: "05 - Mocha Syrup", img: "../assets/mochasyrup.jpg" },
+      { name: "06 - Mauve Jelly", img: "../assets/mauvejelly.jpg" },
+      { name: "07 - Summer Bite", img: "../assets/summerbite.jpg" },
+      { name: "08 - Dew On", img: "../assets/dewon.jpg" },
+      { name: "09 - Taupe Drop", img: "../assets/taupedrop.jpg" },
+      { name: "13 - Pearl Cloud", img: "../assets/pearlcloud.jpg" }
+    ]
+  },
+  dropglow: {
+    name: "Drop Glow Gel",
+    type: "Son bóng gel",
+    price: "378.000đ",
+    img: "../assets/dropglow.jpg",
+    desc: "Drop Glow Gel là dòng son bóng của 3CE với kết cấu gel mượt mà, mang lại hiệu ứng căng bóng tự nhiên cho đôi môi.",
+    colors: [
+      { name: "Youth - Hồng dưa mật", img: "../assets/youth.jpg" },
+      { name: "Raw Apple - Đỏ táo", img: "../assets/rawapple.jpg" },
+      { name: "Essential - Hồng dâu", img: "../assets/essential.jpg" },
+      { name: "Neat - Đỏ ngọt", img: "../assets/neat.jpg" },
+      { name: "Calming - Hồng tím", img: "../assets/calming.jpg" },
+      { name: "Shy - Hồng thanh long", img: "../assets/shy.jpg" },
+      { name: "Weekend - Hồng khô", img: "../assets/weekend.jpg" },
+      { name: "Milder - Hồng lạnh", img: "../assets/milder.jpg" },
+      { name: "Very Sure - Đậu tím", img: "../assets/verysure.jpg" },
+      { name: "Wonder - Hồng nho đá", img: "../assets/wonder.jpg" }
+    ]
+  },
+  misty: {
+    name: "Misty Lip Bare",
+    type: "Son dưỡng có màu",
+    price: "448.000đ",
+    img: "../assets/misty.jpg",
+    desc: "Misty Lip Bare là dòng son bóng dưỡng môi của 3CE với hiệu ứng màu trong trẻo và tự nhiên.",
+    colors: [
+      { name: "01 - Nude Whisper", img: "../assets/nudewhisper.jpg" },
+      { name: "02 - Earlier", img: "../assets/earlier.jpg" },
+      { name: "03 - Milky Illusion", img: "../assets/milkyillusion.jpg" },
+      { name: "04 - Pink Scheme", img: "../assets/pinkscheme.jpg" },
+      { name: "05 - Coral Drench", img: "../assets/coraldrench.jpg" },
+      { name: "06 - Tulip Fuzz", img: "../assets/tulipfuzz.jpg" },
+      { name: "07 - Sun Pause", img: "../assets/sunpause.jpg" },
+      { name: "08 - Chili Flame", img: "../assets/chiliflame.jpg" },
+      { name: "09 - Taupe Drop", img: "../assets/taupedrop.jpg" },
+      { name: "10 - Quiet Taupe", img: "../assets/quiettaupe.jpg" },
+      { name: "11 - Rose Sigh", img: "../assets/rosesigh.jpg" }
+    ]
+  },
+  faceblush: {
+    name: "Face Blush",
+    type: "Phấn má nén",
+    price: "398.000đ",
+    img: "../assets/faceblush.jpg",
+    desc: "Face Blush là dòng phấn má của 3CE với chất phấn mịn nhẹ, giúp tạo hiệu ứng ửng hồng tự nhiên cho gương mặt.",
+    colors: [
+      { name: "Nude Peach - Be Nude", img: "../assets/nudepeach.jpg" },
+      { name: "Mono Pink - Hồng khô", img: "../assets/monopink.jpg" },
+      { name: "Rose Beige - Cam đào", img: "../assets/rosebeige.jpg" },
+      { name: "Soft Salmon - San hô", img: "../assets/softsalmon.jpg" },
+      { name: "Peach Splash", img: "../assets/peachsplash.jpg" },
+      { name: "Pure Cake - Hồng kem", img: "../assets/purecake.jpg" },
+      { name: "Delectable", img: "../assets/delectable.jpg" },
+      { name: "City Mauve", img: "../assets/citymauve.jpg" },
+      { name: "Maple Toast", img: "../assets/mapletoast.jpg" }
+    ]
+  },
+  blushlighter: {
+    name: "Blushlighter",
+    type: "Phấn má bắt sáng",
+    price: "448.000đ",
+    img: "../assets/blushlighter.jpg",
+    desc: "Blushlighter là sản phẩm kết hợp giữa phấn má và bắt sáng, giúp gương mặt thêm rạng rỡ và có chiều sâu.",
+    colors: [
+      { name: "Lazy Talk", img: "../assets/lazytalk.jpg" },
+      { name: "Slick", img: "../assets/slick.jpg" },
+      { name: "Early Now", img: "../assets/earlynow.jpg" },
+      { name: "What If", img: "../assets/whatif.jpg" },
+      { name: "Beige Hour", img: "../assets/beigehour.jpg" },
+      { name: "Coral Flush", img: "../assets/coralflush.jpg" },
+      { name: "Middy Hype", img: "../assets/middyhype.jpg" }
+    ]
+  },
+  bouncyblur: {
+    name: "Bouncy Blur Balm",
+    type: "Phấn má dạng balm",
+    price: "428.000đ",
+    img: "../assets/bouncyblur.jpg",
+    desc: "Bouncy Blur Balm là phấn má dạng balm của 3CE với kết cấu mềm mượt, giúp tạo hiệu ứng má hồng tự nhiên và căng mịn.",
+    colors: [
+      { name: "Fig Soda", img: "../assets/figsoda.jpg" },
+      { name: "Pink Petal", img: "../assets/pinkpetal.jpg" },
+      { name: "Beige Crush", img: "../assets/beigecrush.jpg" },
+      { name: "Desert Heat", img: "../assets/desertheat.jpg" },
+      { name: "Charmed", img: "../assets/charmed.jpg" },
+      { name: "Lilac Whisper", img: "../assets/lilacwhisper.jpg" },
+      { name: "Sweet On You", img: "../assets/sweetonyou.jpg" }
+    ]
+  },
+  newtake: {
+    name: "New Take",
+    type: "Phấn má nén",
+    price: "448.000đ",
+    img: "../assets/newtake.jpg",
+    desc: "New Take là dòng phấn má của 3CE với bảng màu trẻ trung và hiện đại. Chất phấn mịn, lên màu tự nhiên, dễ điều chỉnh độ đậm nhạt.",
+    colors: [
+      { name: "Youth Pink - Hồng tươi", img: "../assets/youthpink.jpg" },
+      { name: "How Dare - Hồng nâu", img: "../assets/howdare.jpg" },
+      { name: "The Motion - Hồng cam", img: "../assets/themotion.jpg" },
+      { name: "Slide Slowly - Đậu đỏ", img: "../assets/slideslowly.jpg" }
+    ]
+  },
+  multieye: {
+    name: "Multi Eye Color Palette",
+    type: "Bảng phấn mắt",
+    price: "671.000đ",
+    img: "../assets/multieye.jpg",
+    desc: "Multi Eye Color Palette là bảng phấn mắt nổi tiếng của 3CE với nhiều tông màu hài hòa từ lì đến nhũ.",
+    colors: [
+      { name: "Beach Muse - Hồng ấm", img: "../assets/beachmuse.jpg" },
+      { name: "Dry Bouquet - Đất ấm", img: "../assets/drybouquet.jpg" },
+      { name: "Auto Focus - Hồng mát", img: "../assets/autofocus.jpg" },
+      { name: "Delightful - Lấp lánh", img: "../assets/delightful.jpg" },
+      { name: "Some Def - Nâu nude", img: "../assets/somedef.jpg" },
+      { name: "Dear Nude", img: "../assets/dearnude.jpg" },
+      { name: "Auto Focus Multi Eye", img: "../assets/autofocusmultieye.jpg" }
+    ]
+  },
+  colorgrid: {
+    name: "Color Grid Eyeshadow",
+    type: "Bảng phấn mắt",
+    price: "398.000đ",
+    img: "../assets/colorgrid.jpg",
+    desc: "Color Grid Eyeshadow là bảng phấn mắt nhỏ gọn với những gam màu thời thượng, phù hợp cho cả trang điểm hằng ngày và dự tiệc.",
+    colors: [
+      { name: "Peach Glaze", img: "../assets/peachglaze.jpg" },
+      { name: "Mint Zest", img: "../assets/mintzest.jpg" },
+      { name: "Mauve Like", img: "../assets/mauvelike.jpg" },
+      { name: "Lost In Pink", img: "../assets/lostinpink.jpg" },
+      { name: "Flame Plick", img: "../assets/flameplick.jpg" },
+      { name: "Butter Cream", img: "../assets/buttercream.jpg" }
+    ]
+  },
+  layeritall: {
+    name: "Layer It All",
+    type: "Palette đa năng",
+    price: "588.000đ",
+    img: "../assets/layeritall.jpg",
+    desc: "Layer It All là bộ sản phẩm trang điểm đa năng của 3CE, kết hợp các tông màu mắt, má và tạo khối trong cùng một thiết kế tiện lợi.",
+    colors: [
+      { name: "Eye-Rosy Hip", img: "../assets/eyerosyhip.jpg" },
+      { name: "Eye-Pink Soda", img: "../assets/eyepinksoda.jpg" },
+      { name: "Eye-Nutty Brown", img: "../assets/eyenuttybrown.jpg" },
+      { name: "Blush-Rosy Tan", img: "../assets/blushrosytan.jpg" },
+      { name: "Blush-Cloud Pink", img: "../assets/blushcloudpink.jpg" },
+      { name: "Blush-Nutty Vibe", img: "../assets/blushnuttyvibe.jpg" },
+      { name: "Contour-Soft Brown", img: "../assets/contoursoftbrown.jpg" },
+      { name: "Contour-Ash Brown", img: "../assets/contourashbrown.jpg" }
+    ]
+  },
+  fittingmesh: {
+    name: "Fitting Mesh Cover Cushion",
+    type: "Cushion",
+    price: "420.000đ",
+    img: "../assets/fittingmesh.jpg",
+    desc: "Fitting Mesh Cover Cushion là dòng kem nền dạng cushion của 3CE với khả năng che phủ hiệu quả và tạo lớp nền mỏng nhẹ tự nhiên.",
+    colors: [
+      { name: "W01 - Tone ấm", img: "../assets/w01.jpg" },
+      { name: "W02 - Tone ấm", img: "../assets/w02.jpg" },
+      { name: "W04 - Tone ấm", img: "../assets/w04.jpg" },
+      { name: "W05 - Tone ấm", img: "../assets/w05.jpg" },
+      { name: "P01 - Tone lạnh", img: "../assets/p01.jpg" },
+      { name: "P02 - Tone lạnh", img: "../assets/p02.jpg" },
+      { name: "N01 - Trung tính", img: "../assets/n01.jpg" },
+      { name: "N1.5 - Trung tính", img: "../assets/n15.jpg" },
+      { name: "N02 - Trung tính", img: "../assets/n02.jpg" },
+      { name: "N03 - Trung tính", img: "../assets/n03.jpg" }
+    ]
+  },
+  kemay: {
+    name: "Easy Brow Designing Pencil",
+    type: "Chì kẻ mày",
+    price: "368.000đ",
+    img: "../assets/kemay.jpg",
+    desc: "Easy Brow Designing Pencil là chì kẻ mày của 3CE với đầu bút mềm mịn, giúp tạo dáng chân mày tự nhiên và sắc nét.",
+    colors: [
+      { name: "Brownie Brown - Nâu", img: "../assets/browniebrown.jpg" },
+      { name: "Deep Brown - Nâu đậm", img: "../assets/deepbrown.jpg" },
+      { name: "Ebony - Nâu gỗ", img: "../assets/ebony.jpg" }
+    ]
+  },
+  mascara: {
+    name: "Super Slim Waterproof",
+    type: "Mascara chống nước",
+    price: "378.000đ",
+    img: "../assets/mascara.jpg",
+    desc: "Super Slim Waterproof là mascara chống nước của 3CE với đầu cọ siêu mảnh, giúp chuốt đều từng sợi mi từ gốc đến ngọn.",
+    colors: []
+  },
+  shimmermakeup: {
+    name: "Shimmer Makeup Fixer",
+    type: "Setting Spray",
+    price: "388.000đ",
+    img: "../assets/shimmermakeup.jpg",
+    desc: "Shimmer Makeup Fixer là xịt khóa trang điểm giúp cố định lớp makeup lâu trôi hơn và mang lại hiệu ứng căng bóng nhẹ nhàng.",
+    colors: []
+  },
+  naturalfinish: {
+    name: "Natural Finish Loose Powder",
+    type: "Phấn phủ dạng bột",
+    price: "458.000đ",
+    img: "../assets/naturalfinish.jpg",
+    desc: "Natural Finish Loose Powder là phấn phủ dạng bột của 3CE giúp kiểm soát dầu thừa và cố định lớp nền hiệu quả.",
+    colors: [
+      { name: "001 Da sáng", img: "../assets/001dasang.jpg" },
+      { name: "002 Da trung bình", img: "../assets/002datrungbinh.jpg" }
+    ]
+  },
+  combo: {
+    name: "3CE Son Cashmere Mini & Voucher Tous Les Jours",
+    type: "Combo quà tặng",
+    price: "700.000đ",
+    img: "../assets/combo.jpg",
+    desc: "Bộ sản phẩm kết hợp son Cashmere Mini của 3CE cùng voucher từ Tous Les Jours. Lựa chọn phù hợp để làm quà tặng.",
+    colors: []
+  }
+};
+
+const id = new URLSearchParams(window.location.search).get("id");
+const p = products[id];
+
+if (p) {
+  const colorBtns = p.colors.map((c, i) =>
+    `<button class="btn btn-outline-danger btn-sm color-btn" onclick="changeColor('${c.img}', this)">${c.name}</button>`
+  ).join(" ");
+
+  document.getElementById("productDetail").innerHTML = `
+    <div class="row g-4">
+      <div class="col-md-5 text-center">
+        <img id="mainImg" src="${p.img}" class="img-fluid rounded shadow" alt="${p.name}">
+      </div>
+      <div class="col-md-7">
+        <h2>${p.name}</h2>
+        <h4 class="text-danger">${p.price}</h4>
+        <p>${p.desc}</p>
+        <table class="table table-bordered mt-3">
+          <tr><th>Danh mục</th><td>Sản phẩm làm đẹp</td></tr>
+          <tr><th>Loại sản phẩm</th><td>${p.type}</td></tr>
+          <tr><th>Thương hiệu</th><td>3CE</td></tr>
+          <tr><th>Giá bán</th><td>${p.price}</td></tr>
+        </table>
+        ${p.colors.length ? `<h6>Phân loại màu sắc</h6><div class="d-flex flex-wrap gap-2 mb-3">${colorBtns}</div>` : ""}
+        <button class="btn btn-danger me-2" onclick="addToCart(p.name, p.price)">🛒 Thêm vào giỏ hàng</button>
+        <a href="san-pham.html" class="btn btn-secondary">Quay lại</a>
+      </div>
+    </div>`;
+} else {
+  document.getElementById("notFound").style.display = "block";
+}
+
+function changeColor(src, btn) {
+  document.getElementById("mainImg").src = src;
+  document.querySelectorAll(".color-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+}
+
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({ name, price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  document.getElementById("cartCount").innerText = cart.length;
+  alert("Đã thêm " + name + " vào giỏ hàng!");
+}
+
+function renderCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let list = document.getElementById("cartList");
+  if (!cart.length) { list.innerHTML = "<li style=\"color:#999\">Giỏ hàng trống</li>"; return; }
+  list.innerHTML = cart.map((it, idx) =>
+    `<li>${it.name} - <b>${it.price}</b><button class="del-btn" onclick="removeCart(${idx})">✕</button></li>`
+  ).join("");
+}
+function removeCart(idx) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(idx, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  document.getElementById("cartCount").innerText = cart.length;
+  renderCart();
+}
+function buyNow() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (!cart.length) { alert("Giỏ hàng trống!"); return; }
+  alert("Cảm ơn bạn đã mua hàng!\n" + cart.map(i => i.name + " - " + i.price).join("\n"));
+  localStorage.removeItem("cart");
+  document.getElementById("cartCount").innerText = 0;
+  renderCart();
+}
+function openCart() {
+  renderCart();
+  document.getElementById("cartPanel").style.display = "block";
+}
+function closeCart() {
+  document.getElementById("cartPanel").style.display = "none";
+}
+
+document.getElementById("cartCount").innerText = (JSON.parse(localStorage.getItem("cart")) || []).length;
+</script>
+</body>
+</html>

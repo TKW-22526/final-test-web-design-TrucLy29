@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Sản phẩm</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+<div class="container">
+<a class="navbar-brand" href="../index.html"><img src="../assets/logo.jpg" alt="3CE" style="height:48px;"> <span class="fw-bold">3CE</span></a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item"><a class="nav-link" href="../index.html">Trang Chủ</a></li>
+<li class="nav-item"><a class="nav-link active" href="san-pham.html">Sản Phẩm</a></li>
+<li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới Thiệu</a></li>
+<li class="nav-item"><a class="nav-link" href="lien-he.html">Liên Hệ</a></li>
+</ul>
+<a href="#" class="btn btn-outline-dark" onclick="openCart();return false;">
+<i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng
+<span class="badge bg-danger" id="cartCount">0</span>
+</a>
+</div>
+</div>
+</nav>
+
+<div class="container py-5">
+
+<h1 class="text-center mb-4" style="font-size:56px;font-weight:300;letter-spacing:.25em;text-transform:uppercase;color:#c47a6a;">
+Danh mục sản phẩm
+</h1>
+
+<input
+type="text"
+id="search"
+class="form-control mb-5"
+placeholder="Tìm sản phẩm"
+oninput="searchProducts()">
+
+<h3 class="category-title">Son môi</h3>
+
+<h5 class="category-title">Son thỏi</h5>
+
+<div class="row">
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="cashmere"
+ src="../assets/cashmere.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Cashmere Hug</h5>
+<p>371.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('cashmere', '../assets/oat.jpg', 'Oat - Be yến mạch')">
+    
+    Oat - Be yến mạch
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('cashmere', '../assets/pureblend.jpg', 'Pure Blend - Hồng da')">
+    
+    Pure Blend - Hồng da
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('cashmere', '../assets/yourside.jpg', 'Your Side - Hồng đất')">
+    
+    Your Side - Hồng đất
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('cashmere', '../assets/textme.jpg', 'Text Me - Hồng mận')">
+    
+    Text Me - Hồng mận
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('cashmere', '../assets/cozywhisper.jpg', 'Cozy Whisper - Hồng hạ')">
+    
+    Cozy Whisper - Hồng hạ
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('cashmere', '../assets/buddy.jpg', 'Buddy - Hồng cá hồi')">
+    
+    Buddy - Hồng cá hồi
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('cashmere', '../assets/knit.jpg', 'Knit - Hồng khô')">
+    
+    Knit - Hồng khô
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('cashmere', '../assets/hushred.jpg', 'Hush Red - Đỏ mâm xôi')">
+    
+    Hush Red - Đỏ mâm xôi
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('cashmere', '../assets/taupebeige.jpg', 'Taupe Beige - Nâu đất')">
+    
+    Taupe Beige - Nâu đất
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('cashmere', '../assets/dreamy.jpg', 'Dreamy - Hồng mơ')">
+    
+    Dreamy - Hồng mơ
+    </button>
+
+</div>
+<a href="chi-tiet.html?id=cashmere"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Cashmere Hug','371.000đ','cashmere')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="glazy"
+src="../assets/glazy.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Glazy Lip Glow</h5>
+<p>398.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('glazy', '../assets/meltingsmore.jpg', '#30 Melting Smore')">
+    
+    #30 Melting Smore
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('glazy', '../assets/lavendercre.jpg', '#31 Lavender Cre')">
+    
+    #31 Lavender Cre
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('glazy', '../assets/peachyfilli.jpg', '#32 Peachy Filli')">
+    
+    #32 Peachy Filli
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('glazy', '../assets/coolsweetie.jpg', '#33 Cool Sweetie')">
+    
+    #33 Cool Sweetie
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('glazy', '../assets/roseglaze.jpg', '#34 Rose Glaze')">
+    
+    #34 Rose Glaze
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('glazy', '../assets/pinktube.jpg', '#35 Pink Tube')">
+    
+    #35 Pink Tube
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('glazy', '../assets/doublegrape.jpg', '#36 Double Grape')">
+    
+    #36 Double Grape
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('glazy', '../assets/raspberryco.jpg', '#37 Raspberry Co')">
+    
+    #37 Raspberry Co
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('glazy', '../assets/saltysweet.jpg', '#38 Salty Sweet')">
+    
+    #38 Salty Sweet
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('glazy', '../assets/bouncycherr.jpg', '#39 Bouncy Cherr')">
+    
+    #39 Bouncy Cherr
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('glazy', '../assets/bakedpeach.jpg', '#40 Baked Peach')">
+    
+    #40 Baked Peach
+    </button>
+
+</div><a href="chi-tiet.html?id=glazy"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Glazy Lip Glow','398.000đ','glazy')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="sketch"
+src="../assets/sketch.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Son sáp Sketch Stick</h5>
+<p>358.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('sketch', '../assets/unfoldingrose.jpg', '02 - Unfolding Rose')">
+    
+    02 - Unfolding Rose
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('sketch', '../assets/softlyspoken.jpg', '03 - Softly Spoken')">
+    
+    03 - Softly Spoken
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('sketch', '../assets/highstandard.jpg', '05 - High Standard')">
+    
+    05 - High Standard
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('sketch', '../assets/alwaysenough.jpg', '06 - Always Enough')">
+    
+    06 - Always Enough
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('sketch', '../assets/burntorange.jpg', '07 - Burnt Orange')">
+    
+    07 - Burnt Orange
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('sketch', '../assets/alreadybooked.jpg', '10 - Already Booked')">
+    
+    10 - Already Booked
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('sketch', '../assets/softclay.jpg', '11 - Soft Clay')">
+    
+    11 - Soft Clay
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('sketch', '../assets/silentbloom.jpg', '13 - Silent Bloom')">
+    
+    13 - Silent Bloom
+    </button>
+
+</div>
+<a href="chi-tiet.html?id=sketch"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Son sáp Sketch Stick','358.000đ','sketch')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="blurmatte"
+src="../assets/blurmatte.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Blur Matte Lipstick</h5>
+<p>478.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blurmatte', '../assets/newtrowave.jpg', 'Newtro Wave - Đỏ lạnh')">
+    
+    Newtro Wave - Đỏ lạnh
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blurmatte', '../assets/purelayer.jpg', 'Pure Layer - Hồng cam')">
+    
+    Pure Layer - Hồng cam
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blurmatte', '../assets/apricotfilter.jpg', 'Apricot Filter - Cam đào')">
+    
+    Apricot Filter - Cam đào
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blurmatte', '../assets/saltycinnamon.jpg', 'Salty Cinnamon - Nude')">
+    
+    Salty Cinnamon - Nude
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blurmatte', '../assets/inthefog.jpg', 'In The Fog - Hồng nude')">
+    
+    In The Fog - Hồng nude
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blurmatte', '../assets/mistyday.jpg', 'Misty Day - Hồng tím')">
+    
+    Misty Day - Hồng tím
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blurmatte', '../assets/mauvedrizzle.jpg', 'Mauve Drizzle - Đỏ nho')">
+    
+    Mauve Drizzle - Đỏ nho
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blurmatte', '../assets/rosiness.jpg', 'Rosiness - Hồng khô')">
+    
+    Rosiness - Hồng khô
+    </button>
+
+</div>
+<a href="chi-tiet.html?id=blurmatte"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Blur Matte Lipstick','478.000đ','blurmatte')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<h5 class="category-title">Son kem</h5>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="blurwater"
+src="../assets/blurwater.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Blur Water Tint</h5>
+<p>398.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/laydown.jpg', 'Laydown - Hồng trầm')">
+    
+Laydown - Hồng trầm
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/bakebeige.jpg', 'Bake Beige - Nâu cam')">
+    
+Bake Beige - Nâu cam
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/casualaffair.jpg', 'Casual Affair - Hồng')">
+    
+Casual Affair - Hồng
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/coralmoon.jpg', 'Coral Moon - Cam gạch')">
+    
+Coral Moon - Cam gạch
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/pinkguava.jpg', 'Pink Guava - Hồng đào')">
+    
+Pink Guava - Hồng đào
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/spotplayer.jpg', 'Spot Player - Táo đỏ')">
+    
+Spot Player - Táo đỏ
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/playoff.jpg', 'Play Off - Đỏ hồng')">
+    
+Play Off - Đỏ hồng
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/doublewind.jpg', 'Double Wind - Hồng khô')">
+    
+Double Wind - Hồng khô
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/breezeway.jpg', 'Breeze Way - Cam ngọt')">
+    
+Breeze Way - Cam ngọt
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/sepia.jpg', 'Sepia - Đỏ táo trầm')">
+    
+Sepia - Đỏ táo trầm
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/earlyhour.jpg', 'Early Hour - Hồng ngọt')">
+    
+Early Hour - Hồng ngọt
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/morepeach.jpg', 'More Peach - Cam đào')">
+    
+More Peach - Cam đào
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/firstletter.jpg', 'First Letter - Hồng')">
+    
+First Letter - Hồng
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/chasingrose.jpg', 'Chasing Rose - Hồng')">
+    
+Chasing Rose - Hồng
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/warmth.jpg', 'Warmth - Cam sữa')">
+    
+Warmth - Cam sữa
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/nighttalk.jpg', 'Night Talk - Hồng nude')">
+    
+Night Talk - Hồng nude
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/dearmarch.jpg', 'Dear March - Cam nude')">
+    
+Dear March - Cam nude
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/softspoken.jpg', 'Soft Spoken')">
+    
+Soft Spoken
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('blurwater', '../assets/midnightcall.jpg', 'Midnight Call')">
+    
+Midnight Call
+</button>
+
+</div>
+<a href="chi-tiet.html?id=blurwater"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Blur Water Tint','398.000đ','blurwater')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="velvetplush"
+src="../assets/velvetplush.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Velvet Plush</h5>
+<p>448.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/speakupplush.jpg', '#01 Speak Up')">
+    
+    #01 Speak Up
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/taupeplush.jpg', '#02 Taupe')">
+    
+    #02 Taupe
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/daffodilplush.jpg', '#03 Daffodil')">
+    
+    #03 Daffodil
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/duskypink.jpg', '#07 Dusky Pink')">
+    
+    #07 Dusky Pink
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/figtachio.jpg', '#08 Figtachio')">
+    
+    #08 Figtachio
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/childlikeplush.jpg', '#09 Childlike')">
+    
+    #09 Childlike
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/heated.jpg', '#21 Heated')">
+    
+    #21 Heated
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/spicedlatte.jpg', '#22 Spiced Latte')">
+    
+    #22 Spiced Latte
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/darkesthour.jpg', '#23 Darkest Hour')">
+    
+    #23 Darkest Hour
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/moltencopper.jpg', '#24 Molten Copper')">
+    
+    #24 Molten Copper
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/coffeedate.jpg', '#26 Coffee Date')">
+    
+    #26 Coffee Date
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/plumsmoke.jpg', '#27 Plum Smoke')">
+    
+    #27 Plum Smoke
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/selfmade.jpg', '#25 Self Made')">
+    
+    #25 Self Made
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/cashmerenudeplush.jpg', '#10 Cashmere Nude')">
+    
+    #10 Cashmere Nude
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/apricotcrust.jpg', '#29 Apricot Crust')">
+    
+    #29 Apricot Crust
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetplush', '../assets/layover.jpg', '#28 Layover')">
+    
+    #28 Layover
+    </button>
+
+</div>
+<a href="chi-tiet.html?id=velvetplush"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Velvet Plush','448.000đ','velvetplush')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="velvetlip"
+src="../assets/velvetlip.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Velvet Lip Tint</h5>
+<p>398.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/childliketint.jpg', 'Childlike - Cam cháy')">
+    
+    Childlike - Cam cháy
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/pinkbreak.jpg', 'Pink Break - Cánh hồng')">
+    
+    Pink Break - Cánh hồng
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/daffodiltint.jpg', 'Daffodil - Đậu đỏ')">
+    
+    Daffodil - Đậu đỏ
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/goingright.jpg', 'Going Right - Cam đào')">
+    
+    Going Right - Cam đào
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/private.jpg', 'Private - Đỏ lạnh')">
+    
+    Private - Đỏ lạnh
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/newnude.jpg', 'New Nude - Mật ong')">
+    
+    New Nude - Mật ong
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/taupe.jpg', 'Taupe - Gạch đỏ')">
+    
+    Taupe - Gạch đỏ
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/bestever.jpg', 'Best Ever - Đỏ hồng')">
+    
+    Best Ever - Đỏ hồng
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/speakuptint.jpg', 'Speak Up - Lê đỏ ngâm')">
+    
+    Speak Up - Lê đỏ ngâm
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/thinkagain.jpg', 'Think Again - Mơ ngọt')">
+    
+    Think Again - Mơ ngọt
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/cashmerenudetint.jpg', 'Cashmere Nude - Hồng')">
+    
+    Cashmere Nude - Hồng
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/definition.jpg', 'Definition - Đất nung')">
+    
+    Definition - Đất nung
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/walkntalk.jpg', 'Walk N Talk - Cam sữa')">
+    
+    Walk N Talk - Cam sữa
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('velvetlip', '../assets/bitterhour.jpg', 'Bitter Hour - Đỏ đất')">
+    
+    Bitter Hour - Đỏ đất
+    </button>
+
+</div>
+<a href="chi-tiet.html?id=velvetlip"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Velvet Lip Tint','398.000đ','velvetlip')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="hazylip"
+src="../assets/hazylip.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Hazy Lip Clay</h5>
+<p>408.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('hazylip', '../assets/mauvrown.jpg', 'Mauvrown - Nâu đỏ đất')">
+    
+    Mauvrown - Nâu đỏ đất
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('hazylip', '../assets/cherryfluff.jpg', 'Cherry Fluff - Hồng')">
+    
+    Cherry Fluff - Hồng
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('hazylip', '../assets/warmbrownie.jpg', 'Warm Brownie - Cam nâu')">
+    
+    Warm Brownie - Cam nâu
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('hazylip', '../assets/commonstranger.jpg', 'Common Stranger - Cam')">
+    
+    Common Stranger - Cam
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('hazylip', '../assets/plumpudding.jpg', 'Plum Pudding - Đỏ mận')">
+    
+    Plum Pudding - Đỏ mận
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('hazylip', '../assets/butterbeige.jpg', 'Butter Beige - Cam đào')">
+    
+    Butter Beige - Cam đào
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('hazylip', '../assets/paintingcot.jpg', 'Paintingcot - Đào đỏ')">
+    
+    Paintingcot - Đào đỏ
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('hazylip', '../assets/typegirl.jpg', 'Typegirl - Hồng lựu')">
+    
+    Typegirl - Hồng lựu
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('hazylip', '../assets/whipred.jpg', 'Whip Red - Đỏ mận')">
+    
+    Whip Red - Đỏ mận
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('hazylip', '../assets/hipamine.jpg', 'Hipamine - Nâu đỏ')">
+    
+    Hipamine - Nâu đỏ
+    </button>
+
+</div>
+<a href="chi-tiet.html?id=hazylip"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Hazy Lip Clay','408.000đ','hazylip')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<h5 class="category-title">Son tint bóng</h5>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="gummyoil"
+src="../assets/gummyoil.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Gummy Oil Tint</h5>
+<p>358.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('gummyoil', '../assets/bagelpeach.jpg', '01 - Bagel Peach')">
+    
+    01 - Bagel Peach
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('gummyoil', '../assets/meltinggummy.jpg', '02 - Melting Gummy')">
+    
+    02 - Melting Gummy
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('gummyoil', '../assets/glowy.jpg', '03 - Glowy')">
+    
+    03 - Glowy
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('gummyoil', '../assets/rosegummy.jpg', '04 - Rose Gummy')">
+    
+    04 - Rose Gummy
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('gummyoil', '../assets/mochasyrup.jpg', '05 - Mocha Syrup')">
+    
+    05 - Mocha Syrup
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('gummyoil', '../assets/mauvejelly.jpg', '06 - Mauve Jelly')">
+    
+    06 - Mauve Jelly
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('gummyoil', '../assets/summerbite.jpg', '07 - Summer Bite')">
+    
+    07 - Summer Bite
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('gummyoil', '../assets/dewon.jpg', '08 - Dew On')">
+    
+    08 - Dew On
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('gummyoil', '../assets/taupedrop.jpg', '09 - Taupe Drop')">
+    
+    09 - Taupe Drop
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('gummyoil', '../assets/pearlcloud.jpg', '13 - Pearl Cloud')">
+    
+    13 - Pearl Cloud
+    </button>
+
+</div>
+<a href="chi-tiet.html?id=gummyoil"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Gummy Oil Tint','358.000đ','gummyoil')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="dropglow"
+src="../assets/dropglow.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Drop Glow Gel</h5>
+<p>378.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('dropglow', '../assets/youth.jpg', 'Youth - Hồng dưa mật')">
+    
+Youth - Hồng dưa mật
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('dropglow', '../assets/rawapple.jpg', 'Raw Apple - Đỏ táo')">
+    
+Raw Apple - Đỏ táo
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('dropglow', '../assets/essential.jpg', 'Essential - Hồng dâu')">
+    
+Essential - Hồng dâu
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('dropglow', '../assets/neat.jpg', 'Neat - Đỏ ngọt')">
+    
+Neat - Đỏ ngọt
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('dropglow', '../assets/calming.jpg', 'Calming - Hồng tím')">
+    
+Calming - Hồng tím
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('dropglow', '../assets/shy.jpg', 'Shy - Hồng thanh long')">
+    
+Shy - Hồng thanh long
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('dropglow', '../assets/weekend.jpg', 'Weekend - Hồng khô')">
+    
+Weekend - Hồng khô
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('dropglow', '../assets/milder.jpg', 'Milder - Hồng lạnh')">
+    
+Milder - Hồng lạnh
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('dropglow', '../assets/verysure.jpg', 'Very Sure - Đậu tím')">
+    
+Very Sure - Đậu tím
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('dropglow', '../assets/wonder.jpg', 'Wonder - Hồng nho đá')">
+    
+Wonder - Hồng nho đá
+</button>
+
+</div>
+<a href="chi-tiet.html?id=dropglow"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Drop Glow Gel','378.000đ','dropglow')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="misty"
+src="../assets/misty.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Misty Lip Bare</h5>
+<p>448.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('misty', '../assets/nudewhisper.jpg', '01 - Nude Whisper')">
+    
+    01 - Nude Whisper
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('misty', '../assets/earlier.jpg', '02 - Earlier')">
+    
+    02 - Earlier
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('misty', '../assets/milkyillusion.jpg', '03 - Milky Illusion')">
+    
+    03 - Milky Illusion
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('misty', '../assets/pinkscheme.jpg', '04 - Pink Scheme')">
+    
+    04 - Pink Scheme
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('misty', '../assets/coraldrench.jpg', '05 - Coral Drench')">
+    
+    05 - Coral Drench
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('misty', '../assets/tulipfuzz.jpg', '06 - Tulip Fuzz')">
+    
+    06 - Tulip Fuzz
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('misty', '../assets/sunpause.jpg', '07 - Sun Pause')">
+    
+    07 - Sun Pause
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('misty', '../assets/chiliflame.jpg', '08 - Chili Flame')">
+    
+    08 - Chili Flame
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('misty', '../assets/taupedrop.jpg', '09 - Taupe Drop')">
+    
+    09 - Taupe Drop
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('misty', '../assets/quiettaupe.jpg', '10 - Quiet Taupe')">
+    
+    10 - Quiet Taupe
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('misty', '../assets/rosesigh.jpg', '11 - Rose Sigh')">
+    
+    11 - Rose Sigh
+    </button>
+
+</div>
+<a href="chi-tiet.html?id=misty"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Misty Lip Bare','448.000đ','misty')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<h3 class="category-title">Phấn Má</h3>
+
+<div class="row">
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="faceblush"
+src="../assets/faceblush.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Face Blush</h5>
+<p>398.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger text-center"
+    onclick="changeImage('faceblush', '../assets/nudepeach.jpg', 'Nude Peach - Be Nude')">
+    
+    Nude Peach - Be Nude
+    </button>
+
+    <button class="btn btn-outline-danger text-center"
+    onclick="changeImage('faceblush', '../assets/monopink.jpg', 'Mono Pink - Hồng khô')">
+    
+    Mono Pink - Hồng khô
+    </button>
+
+    <button class="btn btn-outline-danger text-center"
+    onclick="changeImage('faceblush', '../assets/rosebeige.jpg', 'Rose Beige - Cam đào')">
+    
+    Rose Beige - Cam đào
+    </button>
+
+    <button class="btn btn-outline-danger text-center"
+    onclick="changeImage('faceblush', '../assets/softsalmon.jpg', 'Soft Salmon - San hô')">
+    
+    Soft Salmon - San hô
+    </button>
+
+    <button class="btn btn-outline-danger text-center"
+    onclick="changeImage('faceblush', '../assets/peachsplash.jpg', 'Peach Splash')">
+    
+    Peach Splash
+    </button>
+
+    <button class="btn btn-outline-danger text-center"
+    onclick="changeImage('faceblush', '../assets/purecake.jpg', 'Pure Cake - Hồng kem')">
+    
+    Pure Cake - Hồng kem
+    </button>
+
+    <button class="btn btn-outline-danger text-center"
+    onclick="changeImage('faceblush', '../assets/delectable.jpg', 'Delectable')">
+    
+    Delectable
+    </button>
+
+    <button class="btn btn-outline-danger text-center"
+    onclick="changeImage('faceblush', '../assets/citymauve.jpg', 'City Mauve')">
+    
+    City Mauve
+    </button>
+
+    <button class="btn btn-outline-danger text-center"
+    onclick="changeImage('faceblush', '../assets/mapletoast.jpg', 'Maple Toast')">
+    
+    Maple Toast
+    </button>
+
+</div>
+<a href="chi-tiet.html?id=faceblush"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Face Blush','398.000đ','faceblush')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="blushlighterImage"
+src="../assets/blushlighter.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Blushlighter</h5>
+<p>448.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blushlighterImage', '../assets/lazytalk.jpg', 'Lazy Talk')">
+    
+    Lazy Talk
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blushlighterImage', '../assets/slick.jpg', 'Slick')">
+    
+    Slick
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blushlighterImage', '../assets/earlynow.jpg', 'Early Now')">
+    
+    Early Now
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blushlighterImage', '../assets/whatif.jpg', 'What If')">
+    
+    What If
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blushlighterImage', '../assets/beigehour.jpg', 'Beige Hour')">
+    
+    Beige Hour
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blushlighterImage', '../assets/coralflush.jpg', 'Coral Flush')">
+    
+    Coral Flush
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('blushlighterImage', '../assets/middyhype.jpg', 'Middy Hype')">
+    
+    Middy Hype
+    </button>
+
+</div>
+<a href="chi-tiet.html?id=blushlighter"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Blushlighter','448.000đ','blushlighterImage')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="bouncyblurImage"
+ src="../assets/bouncyblur.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Bouncy Blur Balm</h5>
+<p>428.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('bouncyblurImage', '../assets/figsoda.jpg', 'Fig Soda')">
+    
+    Fig Soda
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('bouncyblurImage', '../assets/pinkpetal.jpg', 'Pink Petal')">
+    
+    Pink Petal
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('bouncyblurImage', '../assets/beigecrush.jpg', 'Beige Crush')">
+    
+    Beige Crush
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('bouncyblurImage', '../assets/desertheat.jpg', 'Desert Heat')">
+    
+    Desert Heat
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('bouncyblurImage', '../assets/charmed.jpg', 'Charmed')">
+    
+    Charmed
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('bouncyblurImage', '../assets/lilacwhisper.jpg', 'Lilac Whisper')">
+    
+    Lilac Whisper
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('bouncyblurImage', '../assets/sweetonyou.jpg', 'Sweet On You')">
+    
+    Sweet On You
+    </button>
+
+</div><a href="chi-tiet.html?id=bouncyblur"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Bouncy Blur Balm','428.000đ','bouncyblurImage')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="newtakeImage"
+src="../assets/newtake.jpg" class="card-img-top">
+<div class="card-body">
+<h5>New Take</h5>
+<p>448.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('newtakeImage', '../assets/youthpink.jpg', 'Youth Pink - Hồng tươi')">
+    
+    Youth Pink - Hồng tươi
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('newtakeImage', '../assets/howdare.jpg', 'How Dare - Hồng nâu')">
+    
+    How Dare - Hồng nâu
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('newtakeImage', '../assets/themotion.jpg', 'The Motion - Hồng cam')">
+    
+    The Motion - Hồng cam
+    </button>
+
+    <button class="btn btn-outline-danger"
+    onclick="changeImage('newtakeImage', '../assets/slideslowly.jpg', 'Slide Slowly - Đậu đỏ')">
+    
+    Slide Slowly - Đậu đỏ
+    </button>
+
+</div>
+<a href="chi-tiet.html?id=newtake"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('New Take','448.000đ','newtakeImage')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<h3 class="category-title">Phấn mắt</h3>
+
+<div class="row">
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="muiltieyeImage"
+src="../assets/multieye.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Multi Eye Color Palette</h5>
+<p>671.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+<button class="btn btn-outline-danger"
+onclick="changeImage('muiltieyeImage', '../assets/beachmuse.jpg', 'Beach Muse - Hồng ấm')">
+    
+Beach Muse - Hồng ấm
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('muiltieyeImage', '../assets/drybouquet.jpg', 'Dry Bouquet - Đất ấm')">
+    
+Dry Bouquet - Đất ấm
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('muiltieyeImage', '../assets/autofocus.jpg', 'Auto Focus - Hồng mát')">
+    
+Auto Focus - Hồng mát
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('muiltieyeImage', '../assets/delightful.jpg', 'Delightful - Lấp lánh')">
+    
+Delightful - Lấp lánh
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('muiltieyeImage', '../assets/somedef.jpg', 'Some Def - Nâu nude')">
+    
+Some Def - Nâu nude
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('muiltieyeImage', '../assets/autofocus.jpg', 'Auto Focus')">
+    
+Auto Focus
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('muiltieyeImage', '../assets/dearnude.jpg', 'Dear Nude')">
+    
+Dear Nude
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('muiltieyeImage', '../assets/overtakemultieye.jpg', 'Overtake')">
+    
+Overtake
+</button>
+
+</div>
+<a href="chi-tiet.html?id=multieye"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Multi Eye Color Palette','671.000đ','muiltieyeImage')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="colorgridImage"
+src="../assets/colorgrid.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Color Grid Eyeshadow</h5>
+<p>398.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('colorgridImage', '../assets/peachglaze.jpg', 'Peach Glaze')">
+    
+Peach Glaze
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('colorgridImage', '../assets/mintzest.jpg', 'Mint Zest')">
+    
+Mint Zest
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('colorgridImage', '../assets/mauvelike.jpg', 'Mauve Like')">
+    
+Mauve Like
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('colorgridImage', '../assets/lostinpink.jpg', 'Lost In Pink')">
+    
+Lost In Pink
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('colorgridImage', '../assets/flameplick.jpg', 'Flame Plick')">
+    
+Flame Plick
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('colorgridImage', '../assets/buttercream.jpg', 'Butter Cream')">
+    
+Butter Cream
+</button>
+
+</div><a href="chi-tiet.html?id=colorgrid"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Color Grid Eyeshadow','398.000đ','colorgridImage')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card product-card">
+<img id="layeritallImage"
+src="../assets/layeritall.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Layer It All </h5>
+<p>588.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('layeritallImage', '../assets/eyerosyhip.jpg', 'Eye-Rosy Hip')">
+    
+Eye-Rosy Hip
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('layeritallImage', '../assets/eyepinksoda.jpg', 'Eye-Pink Soda')">
+    
+Eye-Pink Soda
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('layeritallImage', '../assets/eyenuttybrown.jpg', 'Eye-Nutty Brown')">
+    
+Eye-Nutty Brown
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('layeritallImage', '../assets/blushrosytan.jpg', 'Blush-Rosy Tan')">
+    
+Blush-Rosy Tan
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('layeritallImage', '../assets/blushcloudpink.jpg', 'Blush-Cloud Pink')">
+    
+Blush-Cloud Pink
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('layeritallImage', '../assets/blushnuttyvibe.jpg', 'Blush-Nutty Vibe')">
+    
+Blush-Nutty Vibe
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('layeritallImage', '../assets/contoursoftbrown.jpg', 'Contour-Soft Brown')">
+    
+Contour-Soft Brown
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('layeritallImage', '../assets/contourashbrown.jpg', 'Contour-Ash Brown')">
+    
+Contour-Ash Brown
+</button>
+
+</div>
+<a href="chi-tiet.html?id=layeritall"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Layer It All','588.000đ','layeritallImage')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<h3 class="category-title">Kem nền</h3>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="card">
+<img id="fittingmeshImage"
+ src="../assets/fittingmesh.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Fitting Mesh Cover Cushion</h5>
+<p>420.000đ</p>
+<h6>Phân loại</h6>
+
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('fittingmeshImage', '../assets/w01.jpg', 'W01 - Tone ấm')">
+    
+W01 - Tone ấm
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('fittingmeshImage', '../assets/w02.jpg', 'W02 - Tone ấm')">
+    
+W02 - Tone ấm
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('fittingmeshImage', '../assets/w04.jpg', 'W04 - Tone ấm')">
+    
+W04 - Tone ấm
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('fittingmeshImage', '../assets/w05.jpg', 'W05 - Tone ấm')">
+    
+W05 - Tone ấm
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('fittingmeshImage', '../assets/p01.jpg', 'P01 - Tone lạnh')">
+    
+P01 - Tone lạnh
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('fittingmeshImage', '../assets/p02.jpg', 'P02 - Tone lạnh')">
+    
+P02 - Tone lạnh
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('fittingmeshImage', '../assets/n01.jpg', 'N01 - Trung tính')">
+    
+N01 - Trung tính
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('fittingmeshImage', '../assets/n15.jpg', 'N1.5 - Trung tính')">
+    
+N1.5 - Trung tính
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('fittingmeshImage', '../assets/n02.jpg', 'N02 - Trung tính')">
+    
+N02 - Trung tính
+</button>
+
+<button class="btn btn-outline-danger"
+onclick="changeImage('fittingmeshImage', '../assets/n03.jpg', 'N03 - Trung tính')">
+    
+N03 - Trung tính
+</button>
+
+</div>
+<a href="chi-tiet.html?id=fittingmesh"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Fitting Mesh Cover Cushion','420.000đ','fittingmeshImage')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<h3 class="category-title">Kẻ mày, Mascara</h3>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="card">
+<img id="EasybrowImage"
+     src="../assets/kemay.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Easy Brow Designing Pencil</h5>
+<p>368.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+<button class="btn btn-outline-danger"
+onclick="changeImage('EasybrowImage', '../assets/browniebrown.jpg', 'Brownie Brown - Nâu')">
+    Brownie Brown - Nâu</button>
+<button class="btn btn-outline-danger"
+ onclick="changeImage('EasybrowImage', '../assets/deepbrown.jpg', 'Deep Brown - Nâu đậm')">
+    Deep Brown - Nâu đậm</button>
+<button class="btn btn-outline-danger" 
+onclick="changeImage('EasybrowImage', '../assets/ebony.jpg', 'Ebony - Nâu gỗ')">
+    Ebony - Nâu gỗ</button>
+</div>
+<a href="chi-tiet.html?id=kemay"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Easy Brow Designing Pencil','368.000đ','EasybrowImage')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<img src="../assets/mascara.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Super Slim Waterproof</h5>
+<p>378.000đ</p>
+<a href="chi-tiet.html?id=mascara"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Super Slim Waterproof','378.000đ')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<h3 class="category-title">Xịt khóa trang điểm</h3>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="card">
+<img src="../assets/shimmermakeup.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Shimmer Makeup Fixer</h5>
+<p>388.000đ</p>
+<a href="chi-tiet.html?id=shimmermakeup"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Shimmer Makeup Fixer','388.000đ')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<h3 class="category-title">Phấn phủ</h3>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="card">
+<img id="powderImage"
+src="../assets/naturalfinish.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Natural Finish Loose Powder</h5>
+<p>458.000đ</p>
+<h6>Phân loại</h6>
+<div class="d-flex gap-2 flex-nowrap overflow-auto">
+<button class="btn btn-outline-danger"
+onclick="changeImage('powderImage', '../assets/001dasang.jpg', '001 Da sáng')">
+    001 Da sáng</button>
+<button class="btn btn-outline-danger"
+onclick="changeImage('powderImage', '../assets/002datrungbinh.jpg', '002 Da trung bình')">
+    002 Da trung bình</button>
+</div>
+<a href="chi-tiet.html?id=naturalfinish"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('Natural Finish Loose Powder','458.000đ','powderImage')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<h3 class="category-title">Sản phẩm làm đẹp</h3>
+
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<img src="../assets/combo.jpg" class="card-img-top">
+<div class="card-body">
+<h5>3CE Son Cashmere Mini & Voucher Tous Les Jours</h5>
+<p>700.000đ</p>
+<a href="chi-tiet.html?id=combo"class="btn btn-dark">Chi tiết</a>
+<button class="btn btn-danger" onclick="addToCart('3CE Son Cashmere Mini & Voucher Tous Les Jours','700.000đ')">
+    🛒 Thêm vào giỏ hàng
+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<script src="../js/script.js"></script>
+<script>
+function changeImage(imgId, imagePath, colorName) {
+    document.getElementById(imgId).src = imagePath;
+    if (colorName) selectedColors[imgId] = colorName;
+}
+</script>
+
+<script>
+function searchProducts() {
+  const keyword = document.getElementById("search").value.toLowerCase();
+  document.querySelectorAll(".product-card, .card").forEach(card => {
+    const name = card.querySelector("h5");
+    if (!name) return;
+    card.closest(".col-md-3, .col-md-4, [class^='col']").style.display =
+      name.textContent.toLowerCase().includes(keyword) ? "" : "none";
+  });
+}
+</script>
+
+<!-- Giỏ hàng modal -->
+<div id="cartPanel">
+  <h5>🛒 Giỏ hàng</h5>
+  <ul id="cartList"></ul>
+  <div class="cart-panel-btns">
+    <button class="btn btn-danger btn-sm flex-fill" onclick="buyNow()">Mua ngay</button>
+    <button class="btn btn-outline-secondary btn-sm" onclick="closeCart()">Đóng</button>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const selectedColors = {};
+function addToCart(name, price, imgId) {
+  const color = imgId && selectedColors[imgId] ? ' - ' + selectedColors[imgId] : '';
+  cart.push({ name: name + color, price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  document.getElementById("cartCount").innerText = cart.length;
+  alert("Đã thêm " + name + color + " vào giỏ hàng!");
+}
+
+function renderCart() {
+  let list = document.getElementById("cartList");
+  if (!cart.length) { list.innerHTML = "<li style=\"color:#999\">Giỏ hàng trống</li>"; return; }
+  list.innerHTML = cart.map((it, idx) =>
+    `<li>${it.name} - <b>${it.price}</b><button class="del-btn" onclick="removeCart(${idx})">✕</button></li>`
+  ).join("");
+}
+function removeCart(idx) {
+  cart.splice(idx, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  document.getElementById("cartCount").innerText = cart.length;
+  renderCart();
+}
+function buyNow() {
+  if (!cart.length) { alert("Giỏ hàng trống!"); return; }
+  alert("Cảm ơn bạn đã mua hàng!\n" + cart.map(i => i.name + " - " + i.price).join("\n"));
+  cart = [];
+  localStorage.removeItem("cart");
+  document.getElementById("cartCount").innerText = 0;
+  renderCart();
+}
+
+function openCart() {
+  renderCart();
+  document.getElementById("cartPanel").style.display = "block";
+}
+function closeCart() {
+  document.getElementById("cartPanel").style.display = "none";
+}
+
+document.getElementById("cartCount").innerText = cart.length;
+</script>
+</body>
+</html>
